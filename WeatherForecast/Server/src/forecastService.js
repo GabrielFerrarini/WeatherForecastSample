@@ -14,12 +14,13 @@ class ForecastService {
         return promise;
     }
 
-    getByZipCode(zipCode) {
+    getByZipCode(country, zipCode) {
         let model = new WeatherModel();
         let geoLocModel = new GeoLocModel();
 
         let promise = new Promise((resolve, reject) => {
             geoLocModel
+                .query({ country: country })
                 .query({ postalcode: zipCode })
                 .get()
                 .then((data) => {

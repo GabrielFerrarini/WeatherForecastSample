@@ -18,8 +18,8 @@ app.get("/forecast/cities/:cityname", function (req, res) {
         });
 });
 
-app.get("/forecast/codes/:zipcode", function (req, res) {
-    ForecastService.getByZipCode(req.params.zipcode)
+app.get("/forecast/codes/:country/:zipcode", function (req, res) {
+    ForecastService.getByZipCode(req.params.country, req.params.zipcode)
         .then((data) => {
             let responseBody = new Forecast(data);
             res.send(responseBody);
