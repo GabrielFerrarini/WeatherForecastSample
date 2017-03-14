@@ -1,4 +1,4 @@
-import WeatherModel from "./weatherModel.js";
+import ForecastService from "./forecastService.js";
 import Forecast from "./forecast.js";
 
 let express = require('express');
@@ -9,9 +9,7 @@ app.get("/", function (req, res) {
 });
 
 app.get("/forecast/cities/:cityname", function (req, res) {
-    let model = new WeatherModel();
-
-    model.getByCityName(req.params.cityname)
+    ForecastService.getByCityName(req.params.cityname)
         .then((data) => {
             let responseBody = new Forecast(data);
             res.send(responseBody);
@@ -21,9 +19,7 @@ app.get("/forecast/cities/:cityname", function (req, res) {
 });
 
 app.get("/forecast/codes/:zipcode", function (req, res) {
-    let model = new WeatherModel();
-
-    model.getByZipCode(req.params.zipcode)
+    ForecastService.getByZipCode(req.params.zipcode)
         .then((data) => {
             let responseBody = new Forecast(data);
             res.send(responseBody);

@@ -28,6 +28,12 @@ class Model {
 
         return this.execute();
     }
+
+    query(value) {
+        this.queryString.push(value);
+
+        return this;
+    }
 }
 
 export default Model;

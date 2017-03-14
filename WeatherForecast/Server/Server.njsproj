@@ -29,6 +29,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="src\app.js" />
+    <Compile Include="src\forecastService.js" />
     <Compile Include="src\model.js" />
     <Compile Include="src\geoLocModel.js" />
     <Compile Include="src\forecast.js" />

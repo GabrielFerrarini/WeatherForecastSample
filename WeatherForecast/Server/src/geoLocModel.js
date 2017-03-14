@@ -6,12 +6,6 @@ class GeoLocModel extends Model {
         this.queryString = [];
         this.queryString.push({ username: "<<username>>" });
     }
-
-    getGeoLocByZipCode(zipCode) {
-        this.queryString.push({ postalcode: zipCode });
-
-        return this.get();
-    }
 }
 
 export default GeoLocModel;
