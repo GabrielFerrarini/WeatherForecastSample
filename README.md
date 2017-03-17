@@ -30,7 +30,7 @@ sudo apt-get install nodejs npm -y
 
 3. Create a virtual link from node to nodejs
 ```
-sudo apt-get install nodejs npm -y
+sudo ln -s /usr/bin/nodejs /usr/bin/node
 ```
 
 4. Install n package
